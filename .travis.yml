@@ -3,7 +3,7 @@ services:
   - docker
   
 before_install:
-  - docker build -t TESTIMAGE -f Dockerfile.dev .
+  - docker build -t praveenbapuram/docker-react -f Dockerfile.dev .
   
 script:
-  - docker run TESTIMAGE-react npm run test -- --coverage
+  - docker run -e CI=true praveenbapuram/docker-react-react npm run test
